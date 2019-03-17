@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <title>采用 http-server 使用 docker 简单部署前端应用</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .container {
+        display: inline-block;
+        text-align: left;
+      }
+
+      .tip {
+        font-size: 26px;
+        color: #b3b1b1;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="tip">本页面是测试页面</div>
+      <h1>1.Dockerfile 文件</h1>
+      <pre>
+        FROM node:latest
+        LABEL something
+        RUN npm install -g http-server
+        COPY dist /usr/local/webapp
+        CMD cd /usr/local;http-server -p 9000
+        EXPOSE 9000
+    </pre
+      >
+      <h2>2.发布</h2>
+      <h2>3.使用</h2>
+      <pre>
+      docker pull [your-docker-rep]
+      docker run -d --name [yourname] -p 9000:9000 [your-docker-rep]
+
+      [] 中的内容根据自己的实际情况进行修改。
+    </pre
+      >
+    </div>
+  </body>
+</html>

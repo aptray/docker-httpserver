@@ -9,5 +9,5 @@ $ docker pull ilex0208/docker-httpserver
 ## start
 
 ```bash
-$ docker run -d --name myhsdemo -p 9000:3000 ilex0208/docker-httpserver
+$ docker run -d --name myhsdemo -p 9000:9000 ilex0208/docker-httpserver
 ```
